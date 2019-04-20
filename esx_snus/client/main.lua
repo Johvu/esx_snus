@@ -22,7 +22,7 @@ end)
 
 function IdleAnimation()
 	local playerPed = GetPlayerPed(-1)
-	
+	-- animations
 	Citizen.CreateThread(function()
 		TaskStartScenarioInPlace(playerPed, "WORLD_HUMAN_AA_SMOKE?", 0, true)   
 		SetPedIsDrunk(GetPlayerPed(-1), true)
@@ -44,6 +44,4 @@ if not HasAnimSetLoaded("MOVE_M@DRUNK@VERYDRUNK") then
 	end
 end
 
-     
-	end)
-end
+-- made by johvu
