@@ -15,9 +15,9 @@ end)
 
 -----
 
-RegisterNetEvent('esx_nuuska:startuse')
-AddEventHandler('esx_nuuska:startuse', function(source)
-	SnusAnim()
+RegisterNetEvent('esx_snus:startuse')
+AddEventHandler('esx_snus:startuse', function(source)
+    SnusAnim()
 	IdleAnimation()
 end)
 
@@ -38,10 +38,9 @@ function SnusAnim()
 	Citizen.Wait(1500) 
 end
 
-
 function IdleAnimation()
 	local playerPed = GetPlayerPed(-1)
-	-- animations
+
 	Citizen.CreateThread(function()
 		TaskStartScenarioInPlace(playerPed, "WORLD_HUMAN_AA_SMOKE?", 0, true)   
 		SetPedIsDrunk(GetPlayerPed(-1), true)
@@ -54,7 +53,7 @@ function IdleAnimation()
 		SetTimecycleModifier("")
 		SetTransitionTimecycleModifier("")
 		StopGameplayCamShaking()
-		
+
 
 if not HasAnimSetLoaded("MOVE_M@DRUNK@VERYDRUNK") then
 	RequestAnimSet("MOVE_M@DRUNK@VERYDRUNK")
@@ -63,4 +62,6 @@ if not HasAnimSetLoaded("MOVE_M@DRUNK@VERYDRUNK") then
 	end
 end
 
--- made by johvu
+
+	end)
+end
