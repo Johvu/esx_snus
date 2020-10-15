@@ -2,7 +2,7 @@ ESX               = nil
 
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
-ESX.RegisterUsableItem('snus', function(source)
+ESX.RegisterUsableItem('kiekko', function(source)
 	local xPlayer = ESX.GetPlayerFromId(source)
 	local snus = xPlayer.getInventoryItem('kiekko')
 	
