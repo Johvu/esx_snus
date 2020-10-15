@@ -15,10 +15,29 @@ end)
 
 -----
 
-RegisterNetEvent('esx_nuuska:startsmoke')
-AddEventHandler('esx_nuuska:startsmoke', function(source)
+RegisterNetEvent('esx_nuuska:startuse')
+AddEventHandler('esx_nuuska:startuse', function(source)
+	SnusAnim()
 	IdleAnimation()
 end)
+
+function SnusAnim()
+	local animDict = 'anim@mp_player_intcelebrationmale@nose_pick' --
+	local animName = 'nose_pick' 
+	local playerPed = GetPlayerPed(-1)
+
+	
+	RequestAnimDict(animDict)
+
+	while not HasAnimDictLoaded(animDict) do
+		Citizen.Wait(10)
+	end
+
+	TaskPlayAnim(GetPlayerPed(-1), animDict, animName, 8.0, -8.0, 1111, 1.0, 0, false, false, false)
+
+	Citizen.Wait(1500) 
+end
+
 
 function IdleAnimation()
 	local playerPed = GetPlayerPed(-1)
