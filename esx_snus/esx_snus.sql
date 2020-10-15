@@ -1,2 +1,2 @@
 INSERT INTO `items` (`name`, `label`, `limit`) VALUES
-	('snus', 'Odens', 20),
+	('kiekko', 'Odens kiekko', 20),
